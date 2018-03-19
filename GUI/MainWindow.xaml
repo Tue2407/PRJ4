@@ -1,0 +1,80 @@
+﻿<Window x:Class="GUI.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GUI"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="419.114" Width="640.191"
+        >
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20*"/>
+            <ColumnDefinition Width="20*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10*"/>
+            <RowDefinition Height="10*"/>
+            <RowDefinition Height="10*"/>
+        </Grid.RowDefinitions>
+        <Button
+            Grid.Column="0"
+            Grid.ColumnSpan="2"
+            Content="LOG IN"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            Width="70"
+            Height="20"
+            Background="Brown" Click="Button_Click"/>
+        
+        <TextBlock
+            Grid.Column="0"
+            Grid.Row="1"
+            Text="User Name:"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Center"
+            FontSize="40"/>
+        <TextBox
+            Grid.Column="1"
+            Grid.Row="1"
+            x:Name="UserName"
+            Text=""
+            Width="200"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            Height="40"
+            FontSize="20"
+            VerticalContentAlignment="Center"/>
+        <TextBlock
+            Grid.Column="0"
+            Grid.Row="2"
+            Text="Password:"
+            FontSize="40"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Center"/>
+        <TextBox
+            x:Name="Password"
+            Grid.Column="1"
+            Grid.Row="2"
+            Text=""
+            Width="200"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            Height="40"
+            FontSize="20"
+            VerticalContentAlignment="Center"/>
+        <Button
+            Grid.Column="0"
+            Content="Create new profile"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Width="120"
+            Height="20"
+            Click="Create_click"/>
+
+
+    </Grid>
+
+
+
+</Window>

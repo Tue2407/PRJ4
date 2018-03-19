@@ -1,0 +1,51 @@
+﻿<Window x:Class="GUI.NewGame"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GUI"
+        mc:Ignorable="d"
+        Title="NewGame" Height="300" Width="300">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10*"/>
+            <RowDefinition Height="10*"/>
+            <RowDefinition Height="10*"/>
+            <RowDefinition Height="10*"/>
+            <RowDefinition Height="10*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="10*"/>
+            <ColumnDefinition Width="10*"/>
+        </Grid.ColumnDefinitions>
+        <Button
+            Click="NewGameStartGame_Click"
+            Grid.Column="0"
+            Grid.Row="4"
+            Grid.ColumnSpan="2"
+            Content="Start Game"
+            Height="20"
+            Width="70"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Bottom"/>
+
+        <Button Grid.Column="0" Grid.Row="1" Height="20" Width="80">
+            <Button.Content>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Difficulty"/>
+                    <Path x:Name="BtnArrow" Margin="4" VerticalAlignment="Center" Width="6" Fill="#FF527DB5" Stretch="Uniform" HorizontalAlignment="Right" Data="F1 M 301.14,-189.041L 311.57,-189.041L 306.355,-182.942L 301.14,-189.041 Z "/>
+                </StackPanel>
+            </Button.Content>
+        </Button>
+
+        <Button Grid.Column="1" Grid.Row="1" Height="20" Width="80">
+            <Button.Content>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Category"/>
+                    <Path x:Name="Btn1Arrow" Margin="4" VerticalAlignment="Center" Width="6" Fill="#FF527DB5" Stretch="Uniform" HorizontalAlignment="Right" Data="F1 M 301.14,-189.041L 311.57,-189.041L 306.355,-182.942L 301.14,-189.041 Z "/>
+                </StackPanel>
+               
+            </Button.Content>
+        </Button>
+    </Grid>
+</Window>
