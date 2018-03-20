@@ -5,22 +5,25 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GUI"
         mc:Ignorable="d"
-        Title="slidingPuzzle" Height="600" Width="800">
+        Title="slidingPuzzle"
+        Height="667"
+        Width="600"
+        >
     <Window.Resources>
         <Image x:Key="pic1" Source="Numbers/amsterdam1.jpg"  Stretch="Fill" Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="3" Grid.RowSpan="3"/>
         <Image x:Key="pic2" Source="Numbers/amsterdam2.jpg"  Stretch="Fill" Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="3" Grid.RowSpan="3"/>
     </Window.Resources>
     <Grid ShowGridLines="False" Background="DarkGreen" x:Name="slidingPuzzleGrid">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="10*"/>
-            <ColumnDefinition Width="10*"/>
-            <ColumnDefinition Width="10*"/>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="200"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="2*"/>
-            <RowDefinition Height="10*"/>
-            <RowDefinition Height="10*"/>
-            <RowDefinition Height="10*"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="200"/>
+            <RowDefinition Height="200"/>
+            <RowDefinition Height="200"/>
         </Grid.RowDefinitions>
         <DockPanel Grid.ColumnSpan="3">
             <ToolBarTray 

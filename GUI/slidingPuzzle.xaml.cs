@@ -22,6 +22,11 @@ namespace GUI
     /// </summary>
     public partial class slidingPuzzle : Window
     {
+        /// <summary>
+        /// Setup
+        /// </summary>
+
+        #region Setup
         private int _start;
         public string elapsed = String.Empty;
         public int i = 0;
@@ -36,6 +41,8 @@ namespace GUI
         Image img;
         List<Rectangle> initialUnallocatedParts = new List<Rectangle>();
         List<Rectangle> allocatedParts = new List<Rectangle>();
+
+        #endregion
 
         public slidingPuzzle()
         {
@@ -53,7 +60,6 @@ namespace GUI
         /// <summary>
         /// Randomize Tiles
         /// </summary>
-
         private void RandomizeTiles()
         {
             Random rand = new Random();
@@ -117,11 +123,7 @@ namespace GUI
         }
 
         /// <summary>
-        /// Creates a ImageBrush using x/y/width/height params
-        /// to create a Viewbox to only show a portion of original
-        /// image. This ImageBrush is then used to fill a Rectangle
-        /// which is added to the internal list of unallocated
-        /// Rectangles
+        ///ImageBrush
         /// </summary>
         private void CreateImagePart(double x, double y, double width, double height)
         {
@@ -143,6 +145,11 @@ namespace GUI
             initialUnallocatedParts.Add(rectPart);
         }
 
+        /// <summary>
+        /// Move image with mouse click
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void rectPart_MouseDown(object sender, MouseButtonEventArgs e)
         {
             //get the source Rectangle, and the blank Rectangle
@@ -187,9 +194,6 @@ namespace GUI
             else
                 return;
         }
-
-
-
      
         /// <summary>
         /// Timer
@@ -205,6 +209,11 @@ namespace GUI
 
         }
 
+        /// <summary>
+        /// Login button window show
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             MainWindow win2 = new MainWindow();
@@ -212,6 +221,11 @@ namespace GUI
             this.Close();
         }
 
+        /// <summary>
+        /// Exit button
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void exit_Click(object sender, RoutedEventArgs e)
         {
             MessageBoxResult result = MessageBox.Show("Do you want to close this window?", "Confirmation", MessageBoxButton.YesNo, MessageBoxImage.Question);
@@ -222,6 +236,11 @@ namespace GUI
             
         }
 
+        /// <summary>
+        /// Highscore button window show
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             Highscore win2 = new Highscore();
@@ -229,6 +248,11 @@ namespace GUI
             this.Close();
         }
 
+        /// <summary>
+        /// Load button window show
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
             LoadGame win2 = new LoadGame();
@@ -236,6 +260,11 @@ namespace GUI
             this.Close();
         }
 
+        /// <summary>
+        /// New Game button window show
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void New_Click(object sender, RoutedEventArgs e)
         {
             NewGame win2 = new NewGame();
@@ -243,19 +272,32 @@ namespace GUI
             this.Close();
         }
 
-
-        // Stopwatch Start
+        /// <summary>
+        /// Stopwatch button start
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Start_OnClick(object sender, RoutedEventArgs e)
         {
             timer.Start();
         }
 
-        // Stopwatch Stop
+        /// <summary>
+        /// Stopwatch button stop
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Stop_OnClick(object sender, RoutedEventArgs e)
         {
             timer.Stop();
         }
 
+        /// <summary>
+        /// Load picture button.
+        /// Loads picture from file explorer.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Picture_OnClick(object sender, RoutedEventArgs e)
         {
             Microsoft.Win32.OpenFileDialog ofd = new Microsoft.Win32.OpenFileDialog();
@@ -277,6 +319,12 @@ namespace GUI
             }
         }
 
+        /// <summary>
+        /// Picture test:
+        /// Testing specific image that is loaded in VS17.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void PictureTest_OnClick(object sender, RoutedEventArgs e)
         {
             try
@@ -293,9 +341,27 @@ namespace GUI
             }
            
         }
+
+        /// <summary>
+        /// Window position Test:
+        /// Testing window position.
+        /// Currently not working.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void SlidingPuzzle_OnLoaded(object sender, RoutedEventArgs e)
+        {
+            slidingPuzzle win2 = new slidingPuzzle();
+
+            win2.Top = 0;
+            win2.Left = 0;
+
+        }
     }
        
-
+    /// <summary>
+    /// Row/Col struct with get; set;
+    /// </summary>
     struct PossiblePositions
     {
         public int Row { get; set; }
